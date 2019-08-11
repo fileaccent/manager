@@ -1,7 +1,13 @@
-let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
+var screenHeight;
+    if (window.innerHeight){
+        screenHeight = window.innerHeight;
+    } else if ((document.body) && (document.body.clientHeight)){
+        screenHeight = document.body.clientHeight;
+    }
+    $("html,body").height(screenHeight);
+--------------------- 
+版权声明：本文为CSDN博主「mangxi8200」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/mangxi8200/article/details/79273125
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
