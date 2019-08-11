@@ -1,7 +1,10 @@
 ﻿let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
+$(function(){
+  $(input).focus(function() {
+    $('body').height(Height);
+  });
+})
+        
 function getUrlParam(names) {//从URL中获取参数
   var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
   var r = window.location.search.substr(1).match(reg); //匹配目标参数
