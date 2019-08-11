@@ -1,29 +1,10 @@
 
 var detection=new Boolean;
 detection=true;
-
-//获取原始窗口的高度
-$(function(){
-  var isfocus=false;
-  var originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
-  window.onresize=function(){
-    var  resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
-    //软键盘弹起与隐藏  都会引起窗口的高度发生变化
-    if(resizeHeight*1<originalHeight*1&&isfocus==true){ //resizeHeight<originalHeight证明窗口被挤压了
-    $('.hideBtn').css('display','none');
-    }
-    else{
-        $('.hideBtn').css('display','block'); 
-    }
-   } 
-  $("input").focus(function(){
-    isfocus=true;
-     
-  });
-  $("input").blur(function(){
-    isfocus=false;
-  })
-})
+let Height = $('body').height();
+        $(window).resize(function() {
+        $('body').height(Height);
+        });
 $(function(){//检测数据格式是否正确
   tests=new Array("/^[0-9]{12}$/",
                   "/^[\u2E80-\u9FFF]{2,5}$/",
