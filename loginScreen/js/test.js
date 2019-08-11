@@ -1,9 +1,4 @@
-let Height = $('body').height();
-$(function(){
-  $("input").focus(function() {
-    $('body').height(Height);
-  });
-})
+
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
