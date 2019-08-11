@@ -1,11 +1,16 @@
 var screenHeight;
+
     if (window.innerHeight){
+
         screenHeight = window.innerHeight;
-    } else if ((document.body) && (document.body.clientHeight)){
+    }
+
+    else if ((document.body) && (document.body.clientHeight)){
+
         screenHeight = document.body.clientHeight;
     }
-    $("html,body").height(screenHeight);
-    alert('成功!');
+
+   $("html,body").height(screenHeight);
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
