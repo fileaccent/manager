@@ -1,4 +1,24 @@
+//获取原始窗口的高度
+var isfocus=false;
+var originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
+window.onresize=function(){
+    var  resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
+    //软键盘弹起与隐藏  都会引起窗口的高度发生变化
+    if(resizeHeight*1<originalHeight*1&&isfocus==true){ //resizeHeight<originalHeight证明窗口被挤压了
+    $('.hideBtn').css('display','none');
+    }else{
+        $('.hideBtn').css('display','block'); 
+    }
+} 
+$("input").focus(function(){
+    isfocus=true;
+     
+});
+$("input").blur(function(){
+    isfocus=false;
+})
 var dataUsed;
+
 function isUserCorrect(){//检测输入用户名的正确性
   var txt=document.getElementById("registerName").value;
   if(txt==null||txt==""){
