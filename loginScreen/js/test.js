@@ -5,6 +5,7 @@ var screenHeight;
         screenHeight = document.body.clientHeight;
     }
     $("html,body").height(screenHeight);
+    alert('成功!');
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
