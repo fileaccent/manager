@@ -1,10 +1,4 @@
-body{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100vw;
-	height:100vh;
-}
+
 /*标题部分*/
 #spareScanfBox {
 	height: 14vh;

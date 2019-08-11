@@ -1,10 +1,5 @@
 /*手机端的样式*/
 body {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100vw;
-	height:100vh;
 	background-image: url("../img/indexBackground.png");
 	background-size: 100% 45vh;
 	background-repeat: no-repeat;
