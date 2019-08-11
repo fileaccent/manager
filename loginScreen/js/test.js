@@ -1,6 +1,6 @@
 let Height = $('body').height();
 $(function(){
-  $(input).focus(function() {
+  $("input").focus(function() {
     $('body').height(Height);
   });
 })
