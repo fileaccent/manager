@@ -1,19 +1,18 @@
 /*手机端的样式*/
-*{
-	z-index:-3;
-}
 body {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	min-height:100vh;
 	background-image: url("../img/indexBackground.png");
 	background-size: 100% 45vh;
 	background-repeat: no-repeat;
 	background-color: white;
 	overflow: hidden;
+	
 }/*设置背景的样式*//*rgb(98, 189, 42)*/
-html,body{
-	position:relative;
-	height:100%;
-	min-height:100%;
-}
 #imageTitle {
 	width: 50vw;
 	height: 40vh;
@@ -118,7 +117,7 @@ input[type="password"] {
 	width:100vw;
 	height:100vh;
 	background-color:rgba(0,0,0,0.5);
-	z-index: 0;
+	z-index: 1;
 	position:absolute;
 	top:0;
 	left:0;
@@ -135,7 +134,7 @@ input[type="password"] {
 	-ms-transform: translate(-50%,-50%);
 	-webkit-transform: translate(-50%,-50%);
 	background-color:rgb(11, 153, 219);
-	z-index:1;
+	z-index:2;
 	display:none;
 }
 #amendBox p{
