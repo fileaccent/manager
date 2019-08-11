@@ -1,9 +1,7 @@
 var h = $(window).height();
 $(window).resize(function() {
   if($(window).height()<h){
-    $('.zc-opr').css("display","none");
-  }else{
-    $('.zc-opr').css("display","block");
+    $(window).height(h);
   }
 });
 var dataUsed;
