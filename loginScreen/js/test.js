@@ -1,3 +1,7 @@
+let Height = $('body').height();///获取页面的高度
+    $(window).resize(function() {
+      $('body').height(Height);
+    });
 //获取原始窗口的高度
 $(function(){
   var isfocus=false;
