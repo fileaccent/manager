@@ -6,6 +6,11 @@ body {
 	background-color: white;
 	overflow: hidden;
 }/*设置背景的样式*//*rgb(98, 189, 42)*/
+html,body{
+	position:relative;
+	height:100%;
+	min-height:100%;
+}
 #imageTitle {
 	width: 50vw;
 	height: 40vh;
