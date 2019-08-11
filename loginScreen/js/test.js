@@ -1,6 +1,6 @@
 let Height = $('body').height();
         $(window).resize(function() {
-        $('body').attr('min-height',Height);
+        $('body').height(Height);
         });
 var dataUsed;
 
