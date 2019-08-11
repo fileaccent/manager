@@ -1,79 +1,79 @@
 /*手机端的样式*/
 body {
 	background-image: url("../img/indexBackground.png");
-	background-size: 100% 45%;
+	background-size: 100% 70vw;
 	background-repeat: no-repeat;
 	background-color: white;
 	overflow: scroll;
 	
 }/*设置背景的样式*//*rgb(98, 189, 42)*/
 #imageTitle {
-	width: 50%;
-	height: 40%;
+	width: 50vw;
+	height: 60vw;
 	text-align: center;
 }
 #backgroundBox {
-	width: 50%;
-	height: 40%;
+	width: 50vw;
+	height: 70vw;
 	margin: 0 auto;
 }
 #registerContainer {
-	margin-top: 5vh;
+	margin-top: 0;
 }
 #headTitle {
-	font-size: 8%;
+	font-size: 8vw;
 	color: rgb(48, 150, 7);
 	font-weight: 900;
 	font-family: "宋体";
 	text-align: center;
 }/*设置标题的样式*/
 #titlePicture {
-	width: 20%;
-	height: 20%;
+	width: 20vw;
+	height: 20vw;
 	margin-top: 8vw;
 }/*设置用户头像的样式*/
 #register {
 	margin: 0 auto;
-	width: 70%;
-	height: 40%;
+	width: 70vw;
+	height: 60vw;
 	font-family: "微软雅黑";
-	font-size: 4%;
+	font-size: 4vw;
 	background-color: white;
 	color: black;
 	text-align: center;
 }/*设置表单主题的格式*/
 #user {
-	width: 65%;
+	width: 65vw;
 	margin: 0 auto;
 	margin-top: 8vw;
 }/*用户输入框的样式*/
 #password {
-	width: 65%;
+	width: 65vw;
 	margin: 0 auto;
 	margin-top: 4vw;
 }/*密码输入框的样式*/
 input[type="text"] {
-	width: 45%;
-	height: 4%;
+	width: 45vw;
+	height: 5vw;
 	border: 1px solid rgb(48, 150, 7);
-	font-size: 4%;
+	font-size: 4vw;
 }/*设置输入框的格式*/
 input[type="password"] {
-	width: 45%;
-	height: 4%;
+	width: 45vw;
+	height: 5vw;
 	border: 1px solid rgb(48, 150, 7);
-	font-size: 4%;
+	font-size: 4vw;
 }/*设置输入框的格式*/
 #findbackPassword {
-	font-size: 3%;
+	font-size: 3vw;
 	cursor: pointer;
 }
 #registerSubmit {
-	width: 20%;
-	height: 5%;
+	width: 20vw;
+	height: 7vw;
 	outline: none;
 	font-family: "微软雅黑";
-	font-size: 5%;
+	font-size: 5vw;
 	word-spacing: 20px;
 	background-color: rgb(48, 150, 7);
 	color: white;
@@ -85,11 +85,11 @@ input[type="password"] {
 	border: 1px solid rgb(131, 194, 106);
 }/*提交框的整体样式*/
 #registerMessage {
-	width: 20%;
-	height: 5%;
+	width: 20vw;
+	height: 7vw;
 	outline: none;
 	font-family: "微软雅黑";
-	font-size: 5%;
+	font-size: 5vw;
 	word-spacing: 20px;
 	background-color: rgb(48, 150, 7);
 	color: white;
@@ -104,12 +104,12 @@ input[type="password"] {
 #registerHint {
 	margin: 0;
 	display: inline-block;
-	font-size: 2%;
+	font-size: 1vw;
 	color: red;
 }/*提示文字的样式*/
 #blackBox{
-	width:100%;
-	height:100%;
+	width:100vw;
+	height:100vh;
 	background-color:rgba(0,0,0,0.5);
 	z-index: 1;
 	position:absolute;
@@ -118,8 +118,8 @@ input[type="password"] {
 	display:none;
 }
 #amendBox{
-	width:80%;
-	height:50%;
+	width:80vw;
+	height:80vw;
 	position:absolute;
 	top:50%;
 	left: 50%;
@@ -134,71 +134,71 @@ input[type="password"] {
 #amendBox p{
 	font-size:35px;
 	font-weight:bold;
-	margin-top:2%;
-	margin-left:2%;
+	margin-top:2vw;
+	margin-left:2vw;
 	color:white;
 	display:inline-block;
 }
 #close{
 	font-size:4vmin;
 	float:right;
-	margin-top:2%;
-	margin-right:3%;
+	margin-top:2vh;
+	margin-right:3vw;
 	color:white;
 }
 #messageBox{
-	width:70%;
-	height:40%;
+	width:70vw;
+	height:50vw;
 	background-color:white;
 	margin:0 auto;
 }
 .fromPart {
-	width: 70%;
-	height: 5%;
-	padding: 3% 4% 0 4%;
-	font-size: 3%;
+	width: 70vw;
+	height: 5vw;
+	padding: 5vw 4vw 0 4vw;
+	font-size: 3vw;
 }
 .fromPart label{
-	font-size:3%;
+	font-size:4vw;
 }
 .fromPart input {
-	font-size: 3%;
+	font-size: 4vw;
 	text-align: center;
-	width: 50%;
-	height: 4%;
+	width: 50vw;
+	height: 5vw;
 	border: 2px solid gray;
 }
 #reserve{
-	width: 20%;
-	height: 5%;
+	width: 20vw;
+	height: 7vw;
 	outline: none;
 	font-family: "微软雅黑";
-	font-size: 5%;
-	word-spacing: 20%;
+	font-size: 5vw;
+	word-spacing: 20px;
 	background-color: rgb(11, 153, 219);
 	color: white;
 	border: 1px solid rgb(11, 153, 219);
 	cursor: pointer;
-	margin-top:5%;
-	margin-left:10%;
+	margin-top:7vw;
+	margin-left:10vw;
 }
 #reserve:hover {
 	background-color: rgb(84, 165, 202);
 	border: 1px solid rgb(84, 165, 202);
 }
 #closes{
-	width: 20%;
-	height: 5%;
+	width: 20vw;
+	height: 7vw;
 	outline: none;
 	font-family: "微软雅黑";
-	font-size: 5%;
+	font-size: 5vw;
 	word-spacing: 20px;
 	background-color: rgb(11, 153, 219);
 	color: white;
 	border: 1px solid rgb(11, 153, 219);
 	cursor: pointer;
-	margin-top:5%;
-	margin-left:10%;
+	margin-top:7vw;
+	margin-left:10vw;
 }
 #closes:hover {
 	background-color: rgb(84, 165, 202);
