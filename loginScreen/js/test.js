@@ -1,15 +1,9 @@
+let Height = $('body').height();
 $(function(){
-  $("input").focus(function(){
-    let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
-  })
-  $("input").blur(function(){
-    let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
+  $(input).focus(function(){
+    $(window).resize(function() {
+    $('body').height(Height);
+    });
   })
 })
 var dataUsed;
