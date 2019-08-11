@@ -1,7 +1,11 @@
-let Height = $('body').height();///获取页面的高度
-    $(window).resize(function() {
-      $('body').height(Height);
-    });
+var h = $(window).height();
+$(window).resize(function() {
+  if($(window).height()<h){
+    $('.zc-opr').css("display","none");
+  }else{
+    $('.zc-opr').css("display","block");
+  }
+});
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
