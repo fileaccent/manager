@@ -1,4 +1,7 @@
-
+let Height = $('body').height();
+        $(window).resize(function() {
+        $('body').attr('min-height',Height);
+        });
 var dataUsed;
 
 function isUserCorrect(){//检测输入用户名的正确性
