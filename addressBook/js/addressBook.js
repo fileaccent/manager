@@ -2,6 +2,9 @@
   $("input").focus(function(){
     $("#menu").hidden();
   })
+  $("input").blur(function(){
+    $("#menu").show();
+  })
 })
 function getUrlParam(names) {//从URL中获取参数
   var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
