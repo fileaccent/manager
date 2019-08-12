@@ -135,7 +135,7 @@ textarea::placeholder {
 }
 /*底部菜单的样式*/
 #menu {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	width: 100vw;
 	height: 20vw;
