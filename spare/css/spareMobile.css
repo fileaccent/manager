@@ -122,6 +122,8 @@ td {
 }
 /*底部菜单的样式*/
 #menu {
+	position: fixed;
+	bottom: 0;
 	width: 100vw;
 	height: 20vw;
 	border-top: 1px solid black;
