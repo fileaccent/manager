@@ -1,10 +1,10 @@
 var spareTime = new Array();
 var person;
 $(function(){
-  $("input textarea").focus(function(){
+  $("input,textarea").focus(function(){
     $("#menu").attr("display","none");
   });
-  $("input textarea").blur(function(){
+  $("input,textarea").blur(function(){
     $("#menu").toggle("display","block");
   })
 })

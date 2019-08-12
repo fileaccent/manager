@@ -2,10 +2,10 @@
 var detection=new Boolean;
 detection=true;
 $(function(){
-  $("input textarea").focus(function(){
+  $("input,textarea").focus(function(){
     $("#menu").attr("display","none");
   });
-  $("input textarea").blur(function(){
+  $("input,textarea").blur(function(){
     $("#menu").toggle("display","block");
   })
 })
