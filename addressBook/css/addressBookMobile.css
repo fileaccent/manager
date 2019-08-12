@@ -48,7 +48,7 @@ body {
 /*主要内容部分*/
 #container {
 	width: 95vw;
-	height:110vw;
+	height: 80vw;
 	margin: 0 auto;
 	overflow: auto;
 }
@@ -78,6 +78,8 @@ td {
 }
 /*底部菜单的样式*/
 #menu {
+	position: absolute;
+	bottom: 0;
 	width: 100vw;
 	height: 20vw;
 	border-top: 1px solid black;
