@@ -1,8 +1,10 @@
-﻿let Height = $('body').height();
-$(function(){
-  $(input).focus(function() {
-    $('body').height(Height);
+﻿$(function(){
+  $("input textarea").focus(function(){
+    $("#menu").toggle();
   });
+  $("input textarea").blur(function(){
+    $("#menu").toggle();
+  })
 })
         
 function getUrlParam(names) {//从URL中获取参数

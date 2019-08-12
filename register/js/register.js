@@ -1,10 +1,14 @@
 
 var detection=new Boolean;
 detection=true;
-let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
+$(function(){
+  $("input textarea").focus(function(){
+    $("#menu").toggle();
+  });
+  $("input textarea").blur(function(){
+    $("#menu").toggle();
+  })
+})
 $(function(){//检测数据格式是否正确
   tests=new Array("/^[0-9]{12}$/",
                   "/^[\u2E80-\u9FFF]{2,5}$/",
