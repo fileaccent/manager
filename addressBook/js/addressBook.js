@@ -1,9 +1,9 @@
 ﻿$(function(){
   $("input textarea").focus(function(){
-    $("#menu").toggle();
+    $("#menu").attr("display","none");
   });
   $("input textarea").blur(function(){
-    $("#menu").toggle();
+    $("#menu").toggle("display","block");
   })
 })
         

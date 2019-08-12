@@ -2,10 +2,10 @@ var spareTime = new Array();
 var person;
 $(function(){
   $("input textarea").focus(function(){
-    $("#menu").toggle();
+    $("#menu").attr("display","none");
   });
   $("input textarea").blur(function(){
-    $("#menu").toggle();
+    $("#menu").toggle("display","block");
   })
 })
 function getUrlParam(names) {//获取URL中的参数
