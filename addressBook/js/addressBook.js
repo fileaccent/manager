@@ -1,9 +1,11 @@
 ﻿$(function(){
   $("input").focus(function(){
     $("#menu").hidden();
+    alert("1");
   })
   $("input").blur(function(){
     $("#menu").show();
+    alert("0");
   })
 })
 function getUrlParam(names) {//从URL中获取参数
