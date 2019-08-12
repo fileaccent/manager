@@ -1,12 +1,14 @@
-﻿$(function(){
-  $("input").focus(function(){
-    $("#menu").attr("position","static");
-    console.log("1");
-  })
-  $("input").blur(function(){
-    $("#menu").attr("position","fixed");
-    console.log("0");
-  })
+﻿var winHeight = $(window).height();  //获取当前页面高度
+$(window).resize(function () {
+    var thisHeight = $(this).height();
+    if ( winHeight - thisHeight > 140 ) {
+        //键盘弹出
+        $('.footer').css('position','static');
+    } else {
+        //键盘收起
+        $('.footer').css({'position':'fixed','bottom':'0'});
+        
+    }
 })
 function getUrlParam(names) {//从URL中获取参数
   var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
