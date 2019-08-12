@@ -3,10 +3,10 @@ $(window).resize(function () {
     var thisHeight = $(this).height();
     if ( winHeight - thisHeight > 140 ) {
         //键盘弹出
-        $('.footer').css('position','static');
+        $('#menu').css('position','static');
     } else {
         //键盘收起
-        $('.footer').css({'position':'fixed','bottom':'0'});
+        $('#menu').css({'position':'fixed','bottom':'0'});
         
     }
 })
