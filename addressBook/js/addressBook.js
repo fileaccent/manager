@@ -1,10 +1,10 @@
 ﻿$(function(){
   $("input").focus(function(){
-    $("#menu").hide();
+    $("#menu").attr("position","static");
     console.log("1");
   })
   $("input").blur(function(){
-    $("#menu").show();
+    $("#menu").attr("position","fixed");
     console.log("0");
   })
 })
