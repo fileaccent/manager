@@ -68,23 +68,3 @@ $(function(){//点击按钮保存
     }
   })
 })
-$(function(){//底部菜单点击事件
-    $("#addressMenu").click(function(){
-        location="../addressBook/addressBook.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-    })
-    $("#spareMenu").click(function(){
-        location="../spare/spare.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-    })
-    $("#presonMessageMenu").click(function(){
-        location="../message/message.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-    })
-    if(getUrlParam("dataUsed")==1){
-      $("#administratorMenu").click(function(){
-        location="../administrator/administrator.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-      })
-    }
-    $("#callback").click(function(){
-        location="../addressBook/addressBook.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-    })
-})
-
