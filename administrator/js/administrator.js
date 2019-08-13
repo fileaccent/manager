@@ -103,7 +103,7 @@ $(function(){//点击保存时保存数据
 			},
 			  function(data){
 					if(data.message=="修改成功"){
-					console.log("修改成功!");
+					alert("修改成功!");
 					}
         });
       $("#amendBox").toggle();
@@ -142,7 +142,7 @@ $(function(){//删除用户信息
       },function(data,xhrFields){
           xhrFields:{withCredentials:true};
           if(data.message=="删除成功"){
-              console.log(data.message);
+              alert(data.message);
           }
       })
     }
