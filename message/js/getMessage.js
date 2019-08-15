@@ -106,6 +106,7 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 	    $("textarea").prop("readonly",false);
 			$("#userStudentNum").prop("readonly",true);
 			$("input").css("border","1px solid rgb(48, 150, 7)");
+			$("#container").css("height","110vw");
 			$("#hint").show();
 			$("#spareEnter").hide();
 			$("#menu").hide();/*修改细节*/

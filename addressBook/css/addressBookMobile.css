@@ -28,7 +28,7 @@ body {
 	width: 80vw;
 	height: 14vw;
 	margin: 2vw;
-	margin-left: 10vw;
+	margin-left: 14vw;
 }
 #addressBook {
 	outline:none;
@@ -46,15 +46,15 @@ body {
 
 }
 #addressBookSearchImg {
-	width: 12vw;
-	height:10vw;
+	width: 7vw;
+	height:7vw;
 	margin-left: 3vw;
-	margin-top: 3vw;
+	margin-top: 5.5vw;
 }
 /*主要内容部分*/
 #container {
 	width: 95vw;
-	height: 80vw;
+	height: 100vw;
 	margin: 0 auto;
 	overflow: auto;
 }
