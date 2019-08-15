@@ -1,4 +1,5 @@
-﻿var winHeight = $(window).height();  //当手机软键盘弹出时将底部菜单,藏在软键盘后面,软键盘关闭不变
+﻿var detections=true;
+var winHeight = $(window).height();  //当手机软键盘弹出时将底部菜单,藏在软键盘后面,软键盘关闭不变
 $(window).resize(function () {
     var thisHeight = $(this).height();
     if ( winHeight - thisHeight > 140 ) {
@@ -31,10 +32,11 @@ $(function(){//加载信息
 		}
 		$("#spareBox").hide();
 		$("#menu").hide();
-		$("#container").css({"border-top":"3px solid rgb(48, 150, 7)","margin-top":"5vh"});
-		$(".fromPart").css({"margin-top":"3vh"});
-		$("#containerLeft").css({"height":"18vh"});
-		$("#containerRight").css({"height":"43vh"});
+		$("#container").css({"border-top":"3px solid rgb(48, 150, 7)","margin-top":"5vw","height":"120vw"});
+		$(".fromPart").css({"margin-top":"3vw","height":"10vw"});
+		$("#containerLeft").css({"height":"35vw"});
+		$("#containerRight").css({"height":"86vw"});
+		$(".data").css({"margin-top":"3vw"})
 		$("#callback").show();
 
 		$(function(){/*载入时获得人员的数据*/
@@ -92,6 +94,7 @@ $(function(){//加载信息
 })
 $(function(){//禁用修改
 	$("input").prop("readonly",true);
+	$("textarea").prop("readonly",true);
 });
 $(function(){//点击修改,完成按钮根据值的不同来触发事件
 	$("#spareButton").click(function(){
@@ -100,6 +103,7 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			$("#alterImg").attr("src","img/right.png");
 			$("#alterText").text("保存");
 			$("input").prop("readonly",false);
+	    $("textarea").prop("readonly",false);
 			$("#userStudentNum").prop("readonly",true);
 			$("input").css("border","1px solid rgb(48, 150, 7)");
 			$("#hint").show();
@@ -108,19 +112,19 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 
 		}
 		else{//点击完成时个人信息发生的事件
-			var detections=true;
+			
 			tests=new Array("/^[\u2E80-\u9FFF]{2,5}$/",
 								"/^[\u2E80-\u9FFF]+$/",
 								"/^[\u2E80-\u9FFF]+$/",
 								"/^[\u2E80-\u9FFF]+$/",
 								"/^(?:1[0-2]|[1-9]).(?:[1-9]|([1-2][0-9])?|3[0-1])$/",
 								"/^1(3|4|5|7|8|9)[0-9]{9}$/",
-								"/^[1-9][0-9]{4,9}$/gim",
+								"/^[1-9][0-9]{4,9}$/",
 								"/^([a-z0-9_\.-]+)@([0-9a-z\.-]+)\.([a-z]{2,6})$/",
-								"/^([0-9]{12}$/",
+								"/^[0-9]{12}$/"
 								);
-			information=new Array("姓名","学院","部门","职位","生日","电话","QQ","邮箱","学号");
-			hint=new Array("姓名必须为2位到5位的汉字",
+	    information=new Array("姓名","学院","部门","职位","生日","电话","QQ","邮箱","学号");
+      hint=new Array("姓名必须为2位到5位的汉字",
 										 "学院必须为两位以上的汉字",
 			               "部门必须为两位以上的汉字",
 			               "职位必须为两位以上的汉字",
@@ -131,34 +135,35 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			               "学号必须为12位的数字"
                 )
 			for(var i=0;i<tests.length;i++){//依次检测数据是否正确
-				var j=$("input").eq(i).attr("placeholder");console.log("j="+j);
+
+				var j=$(".data").eq(i).attr("placeholder");console.log("j="+j);
 				var text=j[j.length-2]+j[j.length-1];console.log(text);
-				if(($("input").eq(i).val()==null||$("input").eq(i).val()=="")){console.log($("input").eq(i).val());
+				var reg=eval(tests[i]);console.log(i);
+				if(($(".data").eq(i).val()==null||$(".data").eq(i).val()=="")){
 					$("#hint").text(text+"不能为空!");
 					detections=false;
 					break;
-					}
+				}
 				else{
-					if(text==information[i]){  
-					  var reg=eval(tests[i]);
-					  console.log(i);
-					  if( reg.test($("input").eq(i).val()) ){
-						  $("#hint").text("");
+					  console.log(reg);
+					  console.log(reg.test($(".data").eq(i).val()));
+					  if( reg.test($(".data").eq(i).val()) ){
+							$("#hint").text("");
+							detections = true;
 					  }
 					  else{
 							$("#hint").text(text+"格式错误!"+hint[i]);
 							detections=false;
 							break;
 						}
-					}
 				}
-			}
-
+	    }
 			if(detections==true){//如果数据没问题则发送请求
 
 				$("#alterImg").attr("src","img/alter.png");
 			  $("#alterText").text("修改");
-			  $("input").prop("readonly",true);
+				$("input").prop("readonly",true);
+	      $("textarea").prop("readonly",true);	
 			  $("input").css("border","none");
 			  $("#hint").hide();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 			  $("#spareEnter").show();
@@ -198,42 +203,38 @@ $(function(){//检测数据是否符合格式
 								"/^1(3|4|5|7|8|9)[0-9]{9}$/",
 								"/^[1-9][0-9]{4,9}$/gim",
 								"/^([a-z0-9_\.-]+)@([0-9a-z\.-]+)\.([a-z]{2,6})$/",
-								"/^([0-9]{12}$/",
+								"/^[0-9]{12}$/"
 								);
 	information=new Array("姓名","学院","部门","职位","生日","电话","QQ","邮箱","学号");
-	hint=new Array("姓名必须为2位到5位的汉字",
+  hint=new Array("姓名必须为2位到5位的汉字",
 										 "学院必须为两位以上的汉字",
 			               "部门必须为两位以上的汉字",
 			               "职位必须为两位以上的汉字",
-										 "生日必须是12-18这种格式",
+										 "生日必须是12.18这种格式",
 										 "电话必须为12位电话号码",
 										 "QQ必须正确",
 										 "邮箱必须符合要求",
 			               "学号必须为12位的数字"
                 )
   $(".data").blur(function(){
-		if($("input").attr("readonly")!="readonly"){
-	    var j=$(this).val();
-	    var id=$(this).attr("id");
-	   	var name=$("label[for='"+id+"']").text();
-	  	name=name.replace(/:/,"");
-	  	var i=0;
-	  	for(;i<9;i++){
-	  		if(information[i]==name){
-	  			break;
-	  		}
-  		}
-	  	var reg=eval(tests[i]);
-	  	if(j==null||j==""){
-	  		$("#hint").text(name+"不能为空!");
+		var j=$(this).attr("placeholder");console.log("j="+j);
+		var text=j[j.length-2]+j[j.length-1];console.log(text);
+	  
+	  for(var i=0;i<information.length;i++){
+	  	if(information[i]==text){
+	  		break;
 	  	}
-	  	else if(reg.test(j)){
-		  	$("#hint").text("");
+		}console.log(i);
+	    var reg=eval(tests[i]);console.log(reg);
+	    if($(this).val()==null||$(this).val()==""){
+	    	$("#hint").text(text+"不能为空!");
+	    }
+	    else if(reg.test($(this).val())){
+		    $("#hint").text("");
 	    }
 	    else{
-		  	$("#hint").text(name+"格式错误!"+hint[i]);
-			}
-		}	
+		    $("#hint").text(text+"格式错误"+hint[i]);
+		  }
 	});
 });
 $(function(){//底部菜单的逻辑即返回键的逻辑
