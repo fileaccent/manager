@@ -4,22 +4,16 @@ body {
 }
 /*标题部分*/
 #titleBox {
-	height: 20vw;
+	height: 10vw;
 	text-align: center;
-	background-color: rgb(48, 150, 7);
-	color: white;
 	letter-spacing: 1vw;
 }/*标题框的样式*/
 #addressBookTitle {
-	font-size: 5vw;
+	font-size: 4vw;
 	margin: 0;
 	font-weight: inherit;
 	letter-spacing: 2vw;
-}
-#title {
-	font-size: 8vw;
-	padding: 0;
-	margin: 0;
+	padding-top:2vw
 }
 #picture {
 	display: none;

@@ -9,11 +9,6 @@ body {
 	background-color: rgb(48, 150, 7);
 	color: white;
 }/*标题框的样式*/
-#title {
-	font-size: 8vw;
-	margin: 0;
-	font-weight: inherit;
-}
 #picture {
 	display: none;
 }/*在手机端隐藏*/
