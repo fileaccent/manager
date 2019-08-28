@@ -193,10 +193,14 @@ textarea::placeholder {
 	display: none;
 }
 #alert{
-	position:absolute; 
-	top:140vw; 
+	position:absolute;
+	bottom:20vw; 
 	left:40vw; 
-	font-size:4vw; 
-	color:gray; 
+	font-size:3vw; 
+	color:white; 
+	background-color:rgba(0,0,0,0.7);
+	border-radius:2vw;
+	padding-left:3vw;
+	padding-right:3vw;
 	z-index:999;
 }

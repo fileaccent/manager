@@ -1,4 +1,4 @@
-input[type="button"], input[type="submit"], input[type="reset"] {
+*{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

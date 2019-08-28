@@ -232,10 +232,14 @@ input[type="password"]:hover {
 	border: 1px solid rgb(84, 165, 202);
 }
 #alert{
-	position:absolute; 
-	top:85vh; 
+	position:absolute;
+	bottom:20vw; 
 	left:40vw; 
 	font-size:3vw; 
-	color:gray; 
+	color:white; 
+	background-color:rgba(0,0,0,0.7);
+	border-radius:2vw;
+	padding-left:3vw;
+	padding-right:3vw;
 	z-index:999;
 }
