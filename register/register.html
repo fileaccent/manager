@@ -6,10 +6,13 @@
     <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">  
     <title>注册</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="css/register.css"/>
+    <link rel="stylesheet" href="../adapt.css"/>
+    <link rel="stylesheet" href="css/registerMobile.css"/>
+    <link rel="stylesheet" href="../heart/heart.css"/>
     <script src="js/jquery.js"></script>
     <script src="js/changeCss.js"></script>
     <script src="js/register.js"></script>
+    <script src="../heart/heart.js"></script>
     <script>
         let Height = $('body').height();
         $(window).resize(function() {
@@ -18,7 +21,9 @@
       </script>
   </head>
   <body>
-    <h1 id="registerTitle">信息注册</h1>
+    <div id="register">
+      <h2 id="registerTitle">注册</h2>
+    </div>
     <div id="registerBox"><!--信息填入框-->
       <div id="studentNumBox" class="registerPart">
         <img src="img/studentNum.png"/>

@@ -4,22 +4,20 @@ body {
 }
 /*标题部分*/
 #titleBox {
-	height: 20vw;
+	width:100vw;
+	height: 10vw;
 	text-align: center;
-	background-color: rgb(48, 150, 7);
+	background-color: rgb(155, 223, 128);
 	color: white;
 	letter-spacing: 1vw;
+	border-radius:2vw 2vw 0 0 ;
 }/*标题框的样式*/
 #messageTitle {
-	font-size: 5vw;
+	font-size: 4vw;
 	margin: 0;
 	font-weight: inherit;
 	letter-spacing: 2vw;
-}
-#title {
-	font-size: 8vw;
-	padding: 0;
-	margin: 0;
+	padding-top:2vw;
 }
 #picture {
 	display: none;
@@ -34,43 +32,54 @@ body {
 }
 
 #spareEnter {
-	width:45vw;
-	height:14vw;
+	width:35vw;
+	height:10vw;
 	margin-top:1vw;
 	cursor: pointer;
 	display: block;
 	float: left;
+	background-color:whitesmoke;
+	border-radius:1vw;
+	margin-left:2vw;
 }
 #spareImg {
-	width: 10vw;
-	height: 10vw;
+	width: 7vw;
+	height: 7vw;
 	float: left;
+	margin-top:2vw;
+	margin-left:2vw;
 }
 #spareText {
 	font-size: 3vw;
 	color: rgb(48, 150, 7);
 	float: left;
-	margin-right: 10vw;
-	margin-top:5vw;
+  margin-left:2vw;
+	margin-top:3.6vw;
 	font-weight: bolder;
 }
 #spareButton {
+	width:20vw;
+	height:10vw;
 	cursor: pointer;
 	display: block;
 	float: right;
+	margin-top:1vw;
 	margin-right: 6vw;
+	border-radius:1vw;
 }
 #alterImg {
-	margin-top: 4vw;
+	margin-top: 3vw;
+	margin-left:2vw;
 	width: 5vw;
 	height: 5vw;
 	float: left;
 }
 #alterText {
-	font-size: 5vw;
+	font-size: 3vw;
 	color: rgb(48, 150, 7);
 	float: left;
-	margin-top:4vw;
+	margin-left:2vw;
+	margin-top:3.7vw;
 }
 /*主要内容部分*/
 #container {
@@ -79,6 +88,9 @@ body {
 	margin: 0 auto;
 	overflow: auto;
 	padding-top:3vw;
+	background-color:white;
+	border-bottom:3px solid rgb(155, 223, 128);
+
 }
 #containerLeft {
 	width: 95vw;
@@ -113,7 +125,8 @@ input {
 	text-align: center;
 	width: 28vw;
 	height: 5vw;
-	border: 2px solid rgb(48, 150, 7);
+	border: 1px solid rgb(48, 150, 7);
+	border-radius:1vw;
 	border: none;
 }
 #containerRight input {
@@ -124,18 +137,15 @@ textarea {
 	width: 90vw;
 	height: 20vw;
 	padding: 2vw;
-	border: 2px solid rgb(48, 150, 7);
-	font-size: 5vw;
+	font-size: 3vw;
 	color: rgb(48, 150, 7);
 	font-family: "微软雅黑";
 	margin-top: 1vw;
 	border-radius:4vw;
-}
-textarea:hover {
-	border: 2px solid rgb(48, 150, 7);
+	border:none;
 }
 textarea::placeholder {
- font-size:5vw;
+ font-size:3vw;
  color:rgb(48, 150, 7);
 }
 /*底部菜单的样式*/
@@ -176,9 +186,17 @@ textarea::placeholder {
 }
 #callback {
 	position: absolute;
-	left: 0;
+	left: 2vw;
 	top: 2vw;
 	width: 10vw;
-	height:10vw;
+	height:8vw;
 	display: none;
+}
+#alert{
+	position:absolute; 
+	top:140vw; 
+	left:40vw; 
+	font-size:4vw; 
+	color:gray; 
+	z-index:999;
 }

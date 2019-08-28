@@ -38,35 +38,51 @@ $(function(){//为选择框输入数据
 
 $(function(){//点击搜索按钮开始搜索
   $("#spareSearch").click(function(){
-
-    console.log($(".week input").attr("data-value"));
+    var data;
+    if($(".week input").val()=="单周"){
+      data=-1;
+    }
+    else if($(".week input").val()=="双周"){
+      data=0;
+    }
+    else{
+      data=$(".week input").val();
+    }
+    console.log(data);
     console.log($(".weekDay input").attr("data-value"));
     console.log($(".class input").attr("data-value"));
     console.log($(".department input").attr("data-value"));
-
-    $.get("http://system.chiukiki.cn/api/free",{
-      weekNum:$(".week input").attr("data-value"),
-      day:$(".weekDay input").attr("data-value"),
-      class:$(".class input").attr("data-value"),
-      department:$(".department input").attr("data-value")
-    },function(data,xhrFields){
-      xhrFields:{withCredentials:true};
-      console.log(data.name[0]);
-      $("#addressBookTable").empty();
-      if(data.message!="查询失败"){
-
-        var departmentTitle=$(".department input").attr("data-value");
-        $("#addressBookTable").append("<tr> <td>"+departmentTitle+"</td> <td>"+data.name[0]+"</td> <td>"+data.name[1]+"</td> </tr>");
-        for(var j=2;j<data.name.length;j=j+2){
-          if(j==data.name.length-1){
-            $("#addressBookTable").append("<tr> <td></td> <td>"+data.name[j]+"</td> <td></td> </tr>");
-
-          }
-          else{
-            $("#addressBookTable").append("<tr> <td></td> <td>"+data.name[j]+"</td> <td>"+data.name[j+1]+"</td> </tr>");
-
+    $.ajax({
+      url:"http://system.chiukiki.cn/api/free",
+      data:{
+        weekNum:data,
+        day:$(".weekDay input").attr("data-value"),
+        class:$(".class input").attr("data-value"),
+        department:$(".department input").attr("data-value")
+      },
+      success:function(data){
+        $("body").append("<div id='alert'>"+"请求成功"+"</div>");
+        window.setTimeout(function(){$("#alert").remove();},2000);
+        console.log(data.name[0]);
+        $("#addressBookTable").empty();
+        if(data.message!=""){ 
+          var departmentTitle=$(".department input").attr("data-value");
+          $("#addressBookTable").append("<tr> <td>"+departmentTitle+"</td> <td>"+data.name[0]+"</td> <td>"+data.name[1]+"</td> </tr>");
+          for(var j=2;j<data.name.length;j=j+2){
+            if(j==data.name.length-1){
+              $("#addressBookTable").append("<tr> <td></td> <td>"+data.name[j]+"</td> <td></td> </tr>");
+  
+            }
+            else{
+              $("#addressBookTable").append("<tr> <td></td> <td>"+data.name[j]+"</td> <td>"+data.name[j+1]+"</td> </tr>");
+  
+            }
           }
         }
+      },
+      error:function(){
+        $("body").append("<div id='alert'>"+"请求失败"+"</div>");
+        window.setTimeout(function(){$("#alert").remove();},2000);
       }
     })
   })

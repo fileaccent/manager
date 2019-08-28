@@ -23,7 +23,6 @@ function getUrlParam(names) {//从URL中获取参数
  }
 $(function(){//加载信息
 	if(getUrlParam("way")=="addressBook"){//当从通讯录进入个人信息时的情况
-
 		for(var i=1;i<10;i++){//将label标签的内容换成图片
 			
 		  $("label").eq(i-1).empty();
@@ -41,56 +40,58 @@ $(function(){//加载信息
 
 		$(function(){/*载入时获得人员的数据*/
 			console.log(decodeURI(decodeURI(getUrlParam("queryName"))));
-      $.get("http://system.chiukiki.cn/api/query",{
-        queryName:decodeURI(decodeURI(getUrlParam("queryName")))
-      },
-      function(data,xhrFields){
-        xhrFields:{withCredentials:true};
-        var j=0;
-        for(var i in data[0]){
-
-          if(i!="message"){
-
-						$("input").eq(j).attr({ value: data[0][i] });
-						console.log(data[0][i]);
-						
-          }
-          else{
-
-						$("#userTextarea").text(data[0][i]);
-						
-          }
-					j++;
-					
+			$.ajax({
+				url:"http://system.chiukiki.cn/api/query",
+				data:{
+          queryName:decodeURI(decodeURI(getUrlParam("queryName")))
+				},
+				success:function(data){
+					var j=0;
+					for(var i in data[0]){
+						if(i!="message"){	
+							$("input").eq(j).attr({ value: data[0][i] });
+							console.log(data[0][i]);							
+						}
+						else{	
+							$("#userTextarea").text(data[0][i]);							
+						}
+						j++;						
+					}					
+				},
+				error:function(data){
 				}
-				
-      });
-		});
-				
+			})
+		});			
 	}
 	else{//从底部菜单进入个人信息的情况
 
-    $(function(){/*载入时获得人员的数据*/console.log(getUrlParam("queryNumber"))
-      $.get("http://system.chiukiki.cn/api/queryNumber",{
-            queryNumber:getUrlParam("queryNumber")
-            },
-            function(data,xhrFields){
-							xhrFields:{withCredentials:true};
-                $("#callback").hide();
-                var j=0;
-                for(var i in data[0]){
-                  if(i!="message"){
-                    $("input").eq(j).attr({ value: data[0][i] });console.log(data[0][i]);
-                  }
-                  else{
-                    $("#userTextarea").text(data[0][i]);
-                  }
-                  j++;
-                }
-            });
+		$(function(){/*载入时获得人员的数据*/
+			console.log(getUrlParam("queryNumber"))
+			$.ajax({
+				url:"http://system.chiukiki.cn/api/queryNumber",
+				data:{
+          queryNumber:getUrlParam("queryNumber")
+				},
+				success:function(data){
+					$("#callback").hide();
+					var j=0;
+					for(var i in data[0]){
+						if(i!="message"){
+							$("input").eq(j).attr({ value: data[0][i] });console.log(data[0][i]);
+						}
+						else{
+							$("#userTextarea").text(data[0][i]);
+						}
+						j++;
+					}
+			  },
+			  error:function(data){
+				  $("body").append("<div id='alert'>"+"载入失败"+"</div>");
+				  window.setTimeout(function(){$("#alert").remove();},2000);
+			  }
+		  })
     });
 	}
-	
 })
 $(function(){//禁用修改
 	$("input").prop("readonly",true);
@@ -103,17 +104,38 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			$("#alterImg").attr("src","img/right.png");
 			$("#alterText").text("保存");
 			$("input").prop("readonly",false);
-	    $("textarea").prop("readonly",false);
+			$("textarea").prop("readonly",false);
+			$("textarea").css("border","1px solid rgb(48, 150, 7)");
 			$("#userStudentNum").prop("readonly",true);
-			$("input").css("border","1px solid rgb(48, 150, 7)");
-			$("#container").css("height","110vw");
+			$("#containerLeft").css("height","22vw");
+			$("#containerRight").css("height","60vw");
+			$(".fromPart").css({"margin-top":"6vw","margin-bottom":"0"});
+			$("input").css({"border":"1px solid rgb(48, 150, 7)"});
+			var placeholders=new Array("姓名","学院","部门","职位","生日格式为12.18","电话为12位手机号码","QQ","邮箱","学号","说点什么吧");
+			for(var i=0;i<10;i++){
+				if(i!=9){
+					$("input").eq(i).attr("placeholder",placeholders[i]);
+				}
+				else{
+					$("textarea").attr("placeholder",placeholders[9]);
+				}
+			}
+
+			$("#container").css("height","120vw");
 			$("#hint").show();
 			$("#spareEnter").hide();
 			$("#menu").hide();/*修改细节*/
-
+      
 		}
 		else{//点击完成时个人信息发生的事件
-			
+			for(var i=0;i<10;i++){
+				if(i!=9){
+					$("input").eq(i).attr("placeholder","");
+				}
+				else{
+					$("textarea").attr("placeholder","");
+				}
+			}
 			tests=new Array("/^[\u2E80-\u9FFF]{2,5}$/",
 								"/^[\u2E80-\u9FFF]+$/",
 								"/^[\u2E80-\u9FFF]+$/",
@@ -169,26 +191,29 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			  $("#hint").hide();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 			  $("#spareEnter").show();
 				$("#menu").show();/*修改细节*/
-				
-        $.get("http://system.chiukiki.cn/api/updatePeople",/*点击完成按钮提交信息*/
-			      {
-				       name:$("#userName").val(),
-				       school:$("#userAcademy").val(),
-				       department:$("#userDepartment").val(),
-				       position:$("#userWork").val(),
-				       birthday:$("#userBirthday").val(),
-				       tel:$("#userTelephone").val(),
-				       QQ:$("#userQQ").val(),
-				       email:$("#userEmail").val(),
-				       number:$("#userStudentNum").val(),
-				       message:$("#userTextarea").val()
-			      },
-			      function(data,xhrFields){
-					    xhrFields:{withCredentials:true};
-					    if(data.message=="修改成功"){
-					      alert("修改成功!");
-					    }
-				    });
+				$.ajax({
+					url:"http://system.chiukiki.cn/api/updatePeople",
+					data:{
+						name:$("#userName").val(),
+						school:$("#userAcademy").val(),
+						department:$("#userDepartment").val(),
+						position:$("#userWork").val(),
+						birthday:$("#userBirthday").val(),
+						tel:$("#userTelephone").val(),
+						QQ:$("#userQQ").val(),
+						email:$("#userEmail").val(),
+						number:$("#userStudentNum").val(),
+						message:$("#userTextarea").val()
+				 },
+					success:function(data){
+						$("body").append("<div id='alert'>"+"修改成功"+"</div>");
+						window.setTimeout(function(){$("#alert").remove();},2000);
+					},
+					error:function(data){
+            $("body").append("<div id='alert'>"+"修改失败"+"</div>");
+            window.setTimeout(function(){$("#alert").remove();},2000);
+					}
+				})
 			}			
 		}
 	})
@@ -238,7 +263,7 @@ $(function(){//检测数据是否符合格式
 		  }
 	});
 });
-$(function(){//底部菜单的逻辑即返回键的逻辑
+$(function(){//底部菜单的逻辑和返回键的逻辑
   $("#addressMenu").click(function(){
     location="../addressBook/addressBook.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
   })

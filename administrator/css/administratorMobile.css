@@ -4,11 +4,21 @@ body {
 }
 /*标题部分*/
 #titleBox {
-	height: 20vw;
+	width:100vw;
+	height: 10vw;
 	text-align: center;
-	background-color: rgb(48, 150, 7);
+	background-color: rgb(155, 223, 128);
 	color: white;
+	letter-spacing: 1vw;
+	border-radius:2vw 2vw 0 0 ;
 }/*标题框的样式*/
+#title {
+	font-size: 4vw;
+	margin: 0;
+	font-weight: inherit;
+	letter-spacing: 2vw;
+	padding-top:2vw;
+}
 #picture {
 	display: none;
 }/*在手机端隐藏*/
@@ -40,15 +50,18 @@ body {
 	margin-top: 5.5vw;
 }
 #deleteBox {
-	width: 18vw;
-	height: 9vw;
+	width: 20vw;
+	height: 12vw;
 	margin-top:3vw;
 	margin-left: 7vw;
+	background-color:whitesmoke;
+	border-radius:1vw;
 }
 #deleteImg {
 	width: 7vw;
 	height: 7vw;
-	margin-top:2vw;
+	margin-top:3vw;
+	margin-left:1vw;
 	float: left;
 }
 #deleteText {
@@ -57,7 +70,6 @@ body {
 	float: left;
 	margin-left:2vw;
 	font-weight: bolder;
-	margin-bottom: 0;
 }
 /*主要内容部分*/
 #container {
@@ -65,6 +77,7 @@ body {
 	height: 65vw;
 	margin: 0 auto;
 	overflow: auto;
+	border-bottom:3px solid rgb(155, 223, 128);
 }
 #administratorTable {
 	width: 275vw;
@@ -239,4 +252,16 @@ td {
 	text-align: center;
 	display: none;
 }
-
+#alert{
+	position:absolute; 
+	top:180vw;
+	left:50vw;
+	width:60vw;
+	transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	color:white; 
+	font-size:4vw;
+	z-index:999;
+}

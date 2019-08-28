@@ -4,16 +4,20 @@ body {
 }
 /*标题部分*/
 #titleBox {
+	width:100vw;
 	height: 10vw;
 	text-align: center;
+	background-color: rgb(155, 223, 128);
+	color: white;
 	letter-spacing: 1vw;
+	border-radius:2vw 2vw 0 0 ;
 }/*标题框的样式*/
 #addressBookTitle {
 	font-size: 4vw;
 	margin: 0;
 	font-weight: inherit;
 	letter-spacing: 2vw;
-	padding-top:2vw
+	padding-top:2vw;
 }
 #picture {
 	display: none;
@@ -29,7 +33,7 @@ body {
 	font-size: 4vw;
 	text-align: center;
 	width: 60vw;
-	height: 6vw;
+	height: 7vw;
 	border: 2px solid gray;
 	float: left;
 	margin-top: 5.5vw;
@@ -42,7 +46,7 @@ body {
 #addressBookSearchImg {
 	width: 7vw;
 	height:7vw;
-	margin-left: 3vw;
+	margin-left: 6vw;
 	margin-top: 5.5vw;
 }
 /*主要内容部分*/
@@ -54,31 +58,34 @@ body {
 }
 #addressBookTable {
 	border: 1px solid black;
-	font-size: 5vw;
+	font-size: 3vw;
 	border-collapse: collapse;
 	margin: 0 auto;
 	margin-top: 6vw;
 }
 tr {
-	max-width: 75vw;
-	max-height: 6vw;
+	width: 75vw;
+	height:7vw;
+	line-height: 7vw;
 	margin: 0;
 	border: 1px solid black;
 	background-color:whitesmoke;	
 }
 tr:hover{
-	background-color:rgb(223,242,216);
+	background-color:rgba(223,242,216,0.3);
 }
 th {
 	width: 25vw;
-	height: 6vw;
+	height: 7vw;
+	line-height: 7vw;
 	border: 1px solid black;
 	background-color:rgb(223,242,216);
 	font-weight:inherit;
 }
 td {
 	width: 25vw;
-	height: 6vw;
+	height: 7vw;
+	line-height: 7vw;
 	border: 1px solid black;
 	padding: 0;
 	text-align: center;
@@ -118,4 +125,12 @@ td {
 	color: red;
 	text-align: center;
 	display: none;
+}
+#alert{
+	position:absolute;
+	top:135vw; 
+	left:40vw; 
+	font-size:3vw; 
+	color:gray; 
+	z-index:999;
 }
