@@ -37,7 +37,6 @@ body {
 	outline: 0;
 }
 .wx-input {
-	-webkit-appearance:none; 
 	outline:none;
 	width: 40vw;
 	height: 5vw !important;
@@ -50,6 +49,7 @@ body {
 	font-size: 3vw;
 	text-align:center;
 	border-radius:3vw;
+	-webkit-appearance:none; 
 }
 .wx-input:hover{
 	border: 3px solid rgb(48, 150, 7);
