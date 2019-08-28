@@ -23,6 +23,9 @@
 
 					$(_this).append("<span class='wxSelect_bottom'></span>")
 					$(_this).find(".wxSelect_bottom").css({
+						"-webkit-appearance": "none",
+            "-moz-appearance": "none",
+            appearance: "none",
 						width:"8vw",
 						height:"6vw",
 						background:"rgb(155, 223, 128)",
@@ -30,12 +33,19 @@
 						position:"absolute",
 						right:"0vw",
 						top:"0vw",
-						borderRadius:" 0 3vw 3vw 0 ",
+						transform: "translate(10%,-3%)",
+	          "-o-transform": "translate(10%,-3%)",
+	          "-ms-transform": "translate(10%,-3%)",
+	          "-webkit-transform": "translate(10%,-3%)",
+						borderRadius:" 0 50% 50% 0 ",
 						zIndex:2
 					})
 					$(_this).css({position:"relative",width:w + "px"}),
 					$(_this).append("<span class='wxSelect_label'></span>")
 					$(_this).find(".wxSelect_label").css({
+						"-webkit-appearance": "none",
+            "-moz-appearance": "none",
+            appearance: "none",
 						display: "inline-block",
 						width:"0",
 					    height:"0",
@@ -52,6 +62,9 @@
 					})
 					$(_this).append('<div class="dataBox"><ul class="dataList"></ul></div>');
 					$(_this).find(".dataBox").css({
+						"-webkit-appearance": "none",
+            "-moz-appearance": "none",
+            appearance: "none",
 						width: "100%",
 						maxHeight: "options.height" + "px",
 						overflowY: "scroll",
@@ -115,6 +128,9 @@
 						}
 						$(_this).find(".dataList").append(html);
 						$(_this).find(".dataList li").css({
+							"-webkit-appearance": "none",
+							"-moz-appearance": "none",
+							appearance: "none",
 							padding:"2vw 0 0 2vw",
 							border:"0",
 							listStyleType:"none",

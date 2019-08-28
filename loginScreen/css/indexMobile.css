@@ -234,7 +234,12 @@ input[type="password"]:hover {
 #alert{
 	position:absolute;
 	bottom:20vw; 
-	left:40vw; 
+	left:50vw;
+	max-width:60vw;
+	transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 	font-size:3vw; 
 	color:white; 
 	background-color:rgba(0,0,0,0.7);
