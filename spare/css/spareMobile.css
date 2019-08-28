@@ -42,7 +42,7 @@ body {
   appearance: none;
 	outline:none;
 	width: 40vw;
-	height: 5vw;
+	height: 5vw !important;
 	position: relative;
 	padding-left: 2vw;
 	border-radius: 0;
