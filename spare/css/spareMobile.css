@@ -1,3 +1,6 @@
+*{
+	-webkit-appearance:none; 
+}
 body {
 	background-color: white;
 	overflow:scroll;
