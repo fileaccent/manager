@@ -1,5 +1,7 @@
-input[type="button"], input[type="submit"], input[type="reset"],input[type="text"] {
+input[type="button"], input[type="submit"], input[type="reset"], input[type="text"] {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 input:focus, textarea:focus {
   outline: none;
