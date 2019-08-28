@@ -121,6 +121,9 @@ label {
 	width: 84vw;
 }
 input {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 	font-size: 4vw;
 	text-align: center;
 	width: 28vw;

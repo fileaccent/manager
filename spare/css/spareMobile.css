@@ -37,6 +37,9 @@ body {
 	outline: 0;
 }
 .wx-input {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 	outline:none;
 	width: 40vw;
 	height: 5vw;
