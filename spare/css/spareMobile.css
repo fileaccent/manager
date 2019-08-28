@@ -43,6 +43,7 @@ body {
 	outline:none;
 	width: 40vw;
 	height: 5vw !important;
+	max-height: 5vw;
 	position: relative;
 	padding-left: 2vw;
 	border-radius: 0;
