@@ -55,7 +55,7 @@
 						cursor: "pointer",
 						position: "absolute",
 						right: "2vw",
-						top: "2vw",
+						top: "40%",
 						borderRadius: '0',
 						display:"block",
 						zIndex:3
