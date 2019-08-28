@@ -93,13 +93,13 @@ body {
 
 }
 #containerLeft {
-	width: 95vw;
+	width: 99vw;
 	height: 18vw;
 	display: inline-block;
 	margin: 0 auto;
 }
 #containerRight {
-	width: 95vw;
+	width: 99vw;
 	height: 45vw;
 	display: inline-block;
 	margin: 0 auto;
