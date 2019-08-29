@@ -4,8 +4,8 @@ body {
 	background-size: 100% 70vw;
 	background-repeat: no-repeat;
 	background-color: white;
-	overflow: scroll;
-	
+  overflow-x:hidden ;
+  overflow-y:scroll;
 }/*设置背景的样式*//*rgb(98, 189, 42)*/
 #imageTitle {
 	width: 50vw;

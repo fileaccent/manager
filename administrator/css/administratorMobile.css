@@ -1,6 +1,7 @@
 body {
 	background-color: whites;
-	overflow:hidden;
+	overflow-x:hidden ;
+  overflow-y:scroll;
 }
 /*标题部分*/
 #titleBox {
