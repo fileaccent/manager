@@ -1,6 +1,6 @@
 body {
 	background-color: white;
-	overflow:scroll;
+	overflow:hidden;
 }
 #spareBox {
 	width:100vw;
