@@ -23,15 +23,15 @@
     <script src="../loginScreen/js/test.js"></script>
     <script src="../heart/heart.js"></script>
     <script>
-      document.body.ontouchmove = function (e) {
-        e.preventDefault();
-      };
+      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+        event.preventDefault();
+      });
     </script>
   </head>
 </html>
 <body>
   <div id="titleBox"><!--标题-->
-    <h2 id="addressBookTitle">通讯录8</h2>
+    <h2 id="addressBookTitle">通讯录9</h2>
   </div>
   <div id="picture"><!--手机端不显示-->
     <img id="userPicture" src="img/title.jpg" alt="头像"/>
