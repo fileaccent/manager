@@ -9,8 +9,7 @@ body {
 	background-size: 100% 70vw;
 	background-repeat: no-repeat;
 	background-color: white;
-  overflow-x:scroll ;
-	overflow-y:scroll;
+  overflow:hidden;
 	margin:0;
 	padding:0;
 }/*设置背景的样式*//*rgb(98, 189, 42)*/

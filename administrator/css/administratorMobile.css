@@ -5,8 +5,7 @@ body,html{
 }
 body {
 	background-color: whites;
-	overflow-x:scroll ;
-	overflow-y:scroll;
+	overflow:hidden;
 	margin:0;
 	padding:0;
 }
