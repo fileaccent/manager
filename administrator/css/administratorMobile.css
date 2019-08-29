@@ -256,7 +256,7 @@ td {
 	position:absolute;
 	bottom:20vw; 
 	left:50vw;
-	width:60vw;
+	max-width:60vw;
 	transform: translate(-50%,-50%);
 	-o-transform: translate(-50%,-50%);
 	-ms-transform: translate(-50%,-50%);
