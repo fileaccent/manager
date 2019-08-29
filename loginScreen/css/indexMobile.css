@@ -5,7 +5,9 @@ body {
 	background-repeat: no-repeat;
 	background-color: white;
   overflow-x:scroll ;
-  overflow-y:scroll;
+	overflow-y:scroll;
+	margin:0;
+	padding:0;
 }/*设置背景的样式*//*rgb(98, 189, 42)*/
 #imageTitle {
 	width: 50vw;

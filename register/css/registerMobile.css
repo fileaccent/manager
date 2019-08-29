@@ -1,5 +1,7 @@
 body {
 	overflow: scroll;
+	margin:0;
+	padding:0;
 }
 #register{
 	width:100vw;
