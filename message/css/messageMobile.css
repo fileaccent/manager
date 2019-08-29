@@ -131,6 +131,7 @@ input {
 	border: 1px solid rgb(48, 150, 7);
 	border-radius:1vw;
 	border: none;
+	padding:0;
 }
 #containerRight input {
 	width: 60vw;
