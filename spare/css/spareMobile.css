@@ -45,14 +45,14 @@ body {
 	position: relative;
 	padding-left: 2vw;
 	border-radius: 0;
-	border: 3px solid rgb(155, 223, 128);
+	border: 1px solid rgb(155, 223, 128);
 	text-align: left;
 	font-size: 3vw;
 	text-align:center;
 	border-radius:3vw; 
 }
 .wx-input:hover{
-	border: 3px solid rgb(48, 150, 7);
+	border: 1px solid rgb(48, 150, 7);
 }
 input::-ms-clear { 
 display:none;
