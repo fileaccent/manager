@@ -22,11 +22,10 @@
     <script src="js/register.js"></script>
     <script src="../heart/heart.js"></script>
     <script>
-        let Height = $('body').height();
-        $(window).resize(function() {
-        $('body').height(Height);
-        });
-      </script>
+      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+        event.preventDefault();
+      });
+    </script>
   </head>
   <body>
     <div id="register">

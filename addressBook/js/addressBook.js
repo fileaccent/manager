@@ -1,18 +1,20 @@
 ﻿var winHeight = $(window).height();  //当手机软键盘弹出时将底部菜单,藏在软键盘后面,软键盘关闭不变
-document.addEventListener('touchmove', function (event) {//禁止手机body滑动
-  event.preventDefault();
-});
 $(window).resize(function () {
     var thisHeight = $(this).height();
     if ( winHeight - thisHeight > 140 ) {
         //键盘弹出
         $('#menu').css('position','static');
+        $(body).css("overflow","scroll");
     } else {
         //键盘收起
         $('#menu').css({'position':'fixed','bottom':'0'});
+        $(body).css("overflow","hidden");
         
     }
 })
+document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+  event.preventDefault();
+});
 $(function(){//当非管理员时隐藏管理员按钮
   if(getUrlParam("dataUsed")==0){
     $("#administratorMenu").hide();

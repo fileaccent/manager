@@ -23,7 +23,9 @@
     <script src="js/spareScanf.js"></script>
     <script src="../heart/heart.js"></script>
     <script>
-      $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+        event.preventDefault();
+      });
     </script>
     <script>
         let Height = $('body').height();

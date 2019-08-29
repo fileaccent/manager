@@ -24,6 +24,11 @@
     <script src="js/spare.js"></script>
     <script src="../heart/heart.js"></script>
     <script>
+      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+        event.preventDefault();
+      });
+    </script>
+    <script>
       $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
     </script>
   </head>

@@ -24,6 +24,11 @@
     <script src="loginScreen/js/changeCss.js"></script>
     <script src="loginScreen/js/test.js"></script>
     <script src="heart/heart.js"></script>
+    <script>
+      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
+        event.preventDefault();
+      });
+    </script>
   </head>
   <body>
     <div id="backgroundBox"><!--添加背景图样-->
