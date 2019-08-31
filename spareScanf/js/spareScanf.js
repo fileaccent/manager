@@ -130,6 +130,8 @@ $(function(){//点击按钮保存
 })
 $(function(){
   $("#callback").click(function(){//返回到上一页
-	  history.go(-1);
+	  $("body").not("#menu").animate({"left":"100vw"},function(){
+			location="../message/message.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
+		});
 	})
 })
