@@ -5,8 +5,10 @@ body,html{
 }
 body {
 	overflow:hidden;
+	position:relative;
 	margin:0;
 	padding:0;
+	background-color: #fff;
 }
 #register{
 	width:100vw;
@@ -92,20 +94,10 @@ input:hover{
 	color: red;
 	text-align: center;
 }
-#alert{
-	position:absolute;
-	bottom:20vw; 
-	left:50vw;
-	max-width:60vw;
-	transform: translate(-50%,-50%);
-	-o-transform: translate(-50%,-50%);
-	-ms-transform: translate(-50%,-50%);
-	-webkit-transform: translate(-50%,-50%);
-	font-size:3vw; 
-	color:white; 
-	background-color:rgba(0,0,0,0.7);
-	border-radius:2vw;
-	padding-left:3vw;
-	padding-right:3vw;
-	z-index:999;
+#callback {
+	position: absolute;
+	left: 2vw;
+	top: 1vw;
+	width: 10vw;
+	height:8vw;
 }

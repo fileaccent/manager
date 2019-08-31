@@ -2,10 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="Pragma" content="no-cache">  
-    <meta http-equiv="Cache-Control" content="no-cache">  
-    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">  
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>没课表查询</title>
     <style>
@@ -16,21 +12,18 @@
         box-sizing:border-box;
       }
     </style>
-    <link rel="stylesheet" href="../adapt.css"/>
     <link rel="stylesheet" href="css/spareMobile.css"/>
     <link rel="stylesheet" href="../heart/heart.css"/>
-    <script src="js/jquery.js"></script>
-    <script src="js/changeCss.js"></script>
+    <link rel="stylesheet" href="../css/menu.css"/>
+    <script src="../js/jquery.js"></script>
     <script src="js/plumen.js"></script>
     <script src="js/spare.js"></script>
+    <script src="../js/menu.js" ></script>
     <script src="../heart/heart.js"></script>
     <script>
       document.addEventListener('touchmove', function (event) {//禁止手机body滑动
         event.preventDefault();
       });
-    </script>
-    <script>
-      $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
     </script>
   </head>
 <body>
@@ -39,23 +32,23 @@
   </div>
   <div id="spareControl"><!--输入搜索框-->
     <div id="weekDayBox" class="spareControlPart">
-      <div class="input-Selector week">
-        <input type="text" class="wx-input" placeholder="一周请输入数字">
-      </div>
+      <label for="day" >第</label>
+      <input type="text" class="wx-input" placeholder="请输入数字" id="day">
+      <label for="day" >周</label>
     </div>
     <div id="weekBox" class="spareControlPart">
       <div class="input-Selector weekDay" >
-        <input type="text" class="wx-input" placeholder="请选择星期" readonly>
+        <input type="text" class="wx-input" placeholder="请选择星期" readonly="readonly">
       </div>
     </div>
     <div id="dayBox" class="spareControlPart">
       <div class="class input-Selector">
-        <input type="text" class="wx-input" placeholder="请选择节数" readonly>
+        <input type="text" class="wx-input" placeholder="请选择节数" readonly="readonly">
       </div>
     </div>
     <div id="departmentBox" class="spareControlPart">
       <div class="department input-Selector">
-        <input type="text" class="wx-input" placeholder="部门(可输入)" > 
+        <input type="text" class="wx-input" placeholder="部门" readonly="readonly"> 
       </div>
     </div> 
   </div>
@@ -135,19 +128,19 @@
   </div>
   <div id="menu"><!--底部菜单框-->
     <div id="addressMenu" class="mainMenu">
-      <img id="addressImg"  src="img/messgeMenu.png" /> 
+      <img id="addressImg"  src="../img/messgeMenu.png" /> 
       <p id="addressText">通讯录</p>
     </div>
     <div id="spareMenu" class="mainMenu">
-      <img id="spareMenuImg" src="img/spareMenu.png"/>
+      <img id="spareMenuImg" src="../img/spareMenu.png"/>
       <p id="spareMenuText">没课表</p>
     </div>
     <div id="presonMessageMenu" class="mainMenu">
-      <img id="personMessageImg" src="img/personMessage.png"/>
+      <img id="personMessageImg" src="../img/personMessage.png"/>
       <p id="personMessageText">个人信息</p>
     </div>
     <div id="administratorMenu" class="mainMenu">
-      <img id="administratorImg" src="img/administrator.png"/>
+      <img id="administratorImg" src="../img/administrator.png"/>
       <p id="administratorText">管理员</p>
     </div>
   </div>

@@ -113,16 +113,7 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			$("#containerRight").css("height","60vw");
 			$(".fromPart").css({"margin-top":"6vw","margin-bottom":"0"});
 			$("input").css({"border":"1px solid rgb(48, 150, 7)"});
-			var placeholders=new Array("姓名","学院","部门","职位","生日格式为12.18","电话为12位手机号码","QQ","邮箱","学号","说点什么吧");
-			for(var i=0;i<10;i++){
-				if(i!=9){
-					$("input").eq(i).attr("placeholder",placeholders[i]);
-				}
-				else{
-					$("textarea").attr("placeholder",placeholders[9]);
-				}
-			}
-
+			$("#callback").show();
 			$("#container").css("height","120vw");
 			$("#hint").show();
 			$("#spareEnter").hide();
@@ -265,27 +256,17 @@ $(function(){//检测数据是否符合格式
 		  }
 	});
 });
-$(function(){//底部菜单的逻辑和返回键的逻辑
-  $("#addressMenu").click(function(){
-    location="../addressBook/addressBook.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-  $("#spareMenu").click(function(){
-    location="../spare/spare.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-  $("#presonMessageMenu").click(function(){
-    location="../message/message.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-	if(getUrlParam("dataUsed")==1){//是管理员进入管理员页
-		$("#administratorMenu").click(function(){
-			location="../administrator/administrator.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-		})
-	}
+$(function(){
 	$("#callback").click(function(){//返回到上一页
-
-	history.go(-1);
-
+		$("body").not("#menu").animate({"left":"100vw"},function(){
+			history.go(-1);
+		});
 	})
+})
+$(function(){
 	$("#spareEnter").click(function(){
-		location="../spareScanf/spareScanf.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
+		$("body").not("#menu").animate({"left":"100vw"},function(){
+			location="../spareScanf/spareScanf.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
+		}); 
 	})
 })

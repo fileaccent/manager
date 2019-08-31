@@ -26,12 +26,12 @@ $(function(){//点击改变颜色
   $("#menu").toggle();
   $("td").attr("spare","0");
   $("td").click(function(){
-    if($(this).css("backgroundColor")=="rgb(214, 221, 119)"){
-      $(this).css({backgroundColor:"rgb(155, 223, 128)"});
+    if($(this).css("backgroundColor")=="rgb(154, 255, 154)"){
+      $(this).css({backgroundColor:"rgb(242,242,242)"});
       $(this).attr("spare","0");console.log($(this).attr("spare"));
     }
     else{
-      $(this).css({backgroundColor:"rgb(214, 221, 119)"});
+      $(this).css({backgroundColor:"rgb(154 ,255 ,154)"});
       $(this).attr("spare","1");console.log($(this).attr("spare"));
     }
   })
@@ -127,4 +127,9 @@ $(function(){//点击按钮保存
       $("#spareScanfHint").text("周数不能为空!");
     }
   })
+})
+$(function(){
+  $("#callback").click(function(){//返回到上一页
+	  history.go(-1);
+	})
 })

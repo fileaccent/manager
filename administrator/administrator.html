@@ -2,9 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="Pragma" content="no-cache">  
-    <meta http-equiv="Cache-Control" content="no-cache">  
-    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">  
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>管理员</title>
     <style>
@@ -17,15 +14,11 @@
     </style>
     <link rel="stylesheet" href="css/administratorMobile.css"/>
     <link rel="stylesheet" href="../heart/heart.css"/>
-    <script src="js/changeCss.js"></script>
-    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="../css/menu.css"/>
+    <script src="../js/jquery.js"></script>
     <script src="js/administrator.js"></script>
+    <script src="../js/menu.js" ></script>
     <script src="../heart/heart.js"></script>
-    <script>
-      document.addEventListener('touchmove', function (event) {//禁止手机body滑动
-        event.preventDefault();
-      });
-    </script>
   </head>
 </html>
 <body>
@@ -46,6 +39,7 @@
   <div id="container"><!--信息框-->
     <table id="administratorTable">
       <tr> <th><input type="checkbox" id="allSelect" class="selectPart" value=true/><p>全选</p></th>
+        <th>操作</th>
         <th>姓名</th>
         <th>部门</th>
         <th>职位</th>
@@ -55,20 +49,19 @@
         <th>学院</th>
         <th>学号</th>
         <th>生日</th>
-        <th>操作</th>
       </tr>
       <tr> <td><input type="checkbox" class="selectPart" value=true/><p>选中</p></td> 
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
         <td class="operate"><a class="operateChange">修改</a> <a class="operateDelete">删除</a></td>
-      </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </table>
   </div>
   <div id="blackBox">
@@ -121,19 +114,19 @@
   </div>
   <div id="menu"><!--底部菜单-->
     <div id="addressMenu" class="mainMenu">
-      <img id="addressImg"  src="img/messgeMenu.png" /> 
+      <img id="addressImg"  src="../img/messgeMenu.png" /> 
       <p id="addressText">通讯录</p>
     </div>
     <div id="spareMenu" class="mainMenu">
-      <img id="spareMenuImg" src="img/spareMenu.png"/>
+      <img id="spareMenuImg" src="../img/spareMenu.png"/>
       <p id="spareMenuText">没课表</p>
     </div>
     <div id="presonMessageMenu" class="mainMenu">
-      <img id="personMessageImg" src="img/personMessage.png"/>
+      <img id="personMessageImg" src="../img/personMessage.png"/>
       <p id="personMessageText">个人信息</p>
     </div>
     <div id="administratorMenu" class="mainMenu">
-      <img id="administratorImg" src="img/administrator.png"/>
+      <img id="administratorImg" src="../img/administrator.png"/>
       <p id="administratorText">管理员</p>
     </div>
   </div>

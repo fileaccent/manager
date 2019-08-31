@@ -4,11 +4,11 @@ $(window).resize(function () {
     if ( winHeight - thisHeight > 140 ) {
         //键盘弹出
         $('#menu').css('position','static');
-        $(body).css("overflow-y","scroll");
+        $("body").css("overflow-y","scroll");
     } else {
         //键盘收起
         $('#menu').css({'position':'fixed','bottom':'0'});
-        $(body).css("overflow-y","hidden");
+        $("body").css("overflow-y","hidden");
         
     }
 })
@@ -45,7 +45,9 @@ $(function(){//载入时输出所有人员
       }
       $("td").on("click",function(){
           if(!($(this).parent().children().eq(0).text()==""||$(this).parent().children().eq(0).text()==null)){
+            $("body").not("#menu").animate({"left":"100vw"},function(){
               location="../message/message.html?way=addressBook"+"&queryName="+encodeURI(encodeURI($(this).parent().children().eq(0).text()))+"&queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
+            }); 
           }
       })
   },
@@ -121,19 +123,3 @@ $(function(){/*点击时获得人员的数据*/
     }
   });
 });
-$(function(){//底部菜单的逻辑
-  $("#addressMenu").click(function(){//跳转到通讯录
-    location="../addressBook/addressBook.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-  $("#spareMenu").click(function(){//跳转到没课表
-    location="../spare/spare.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-  $("#presonMessageMenu").click(function(){//跳转到个人信息
-    location="../message/message.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-  })
-  if(getUrlParam("dataUsed")==1){//若为管理员则添加跳转并显示按钮,非管理员隐藏按钮
-    $("#administratorMenu").click(function(){
-      location="../administrator/administrator.html?queryNumber="+getUrlParam("queryNumber")+"&dataUsed="+getUrlParam("dataUsed");
-    })
-  }
-})

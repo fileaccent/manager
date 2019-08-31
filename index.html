@@ -3,12 +3,8 @@
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="Pragma" content="no-cache">  
-    <meta http-equiv="Cache-Control" content="no-cache">  
-    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">  
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, user-scalable=0" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>index.html</title>
     <style>
       input,button{
@@ -18,12 +14,11 @@
         box-sizing:border-box;
       }
     </style>
-    <link rel="stylesheet" href="../adapt.css"/>
-    <link rel="stylesheet" href="loginScreen/css/indexMobile.css"/>
+    <link rel="stylesheet" href="index/css/indexMobile.css"/>
     <link rel="stylesheet" href="heart/heart.css"/>
-    <script src="loginScreen/js/jquery.js"></script>
-    <script src="loginScreen/js/changeCss.js"></script>
-    <script src="loginScreen/js/test.js"></script>
+    <link rel="stylesheet" href="../css/menu.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="index/js/index.js"></script>
     <script src="heart/heart.js"></script>
     <script>
       document.addEventListener('touchmove', function (event) {//禁止手机body滑动
@@ -33,13 +28,13 @@
   </head>
   <body>
     <div id="backgroundBox"><!--添加背景图样-->
-      <img id="imageTitle" src="loginScreen/img/indexTitle.png"/>
+      <img id="imageTitle" src="index/img/indexTitle.png"/>
     </div>
     <div id="registerContainer"><!--用户输入框-->
 
       <h1 id="headTitle">人员管理系统</h1>
 
-      <form id="register" action="http://127.0.0.1/frame/search/search.html" method="post" onsubmit="return false"> 
+      <form id="register" action="" method="post" onsubmit="return false"> 
 
         <div id="user">
 
@@ -74,15 +69,15 @@
       <div id="messageBox"><!--弹出框-->
         <div id="studentNum" class="fromPart">
           <label for="userStudentNum">学号:</label>
-          <input type="text" id="userStudentNum" class="data" name="userStudentNum" placeholder="学号"/><br/>
+          <input type="text" id="userStudentNum" class="data" name="userStudentNum" placeholder="学号" value="201866481204"/><br/>
         </div>
         <div id="telephone" class="fromPart">
           <label for="userTelephone">电话:</label>
-          <input type="text" id="userTelephone" class="data" name="userTelephone" placeholder="电话"/><br/>
+          <input type="text" id="userTelephone" class="data" name="userTelephone" placeholder="电话" value="19893311029"/><br/>
         </div>
         <div id="setPasswordBox" class="fromPart">
           <label for="setPassword" >密码:</label>
-          <input type="password" id="setPassword" name="password" placeholder="请输入密码" onblur="isPasswordCorrect()"/>
+          <input type="password" id="setPassword" class="data" name="password" placeholder="密码" value="zhaorong1218"/>
         </div>
         <button type="button" id="reserve">提交</button>
         <button type="button" id="closes">关闭</button>

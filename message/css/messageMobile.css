@@ -5,7 +5,9 @@ body,html{
 }
 body {
 	background-color: white;
-	overflow:hidden;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	position:absolute;
 	margin:0;
 	padding:0;
 }
@@ -160,33 +162,6 @@ textarea::placeholder {
  font-size:3vw;
  color:rgb(48, 150, 7);
 }
-/*底部菜单的样式*/
-#menu {
-	position: fixed;
-	bottom: 0;
-	width: 100vw;
-	height: 15vw;
-	border-top: 1px solid black;
-	background-color:white;
-}
-.mainMenu {
-	width: 25vw;
-	height: 15vw;
-	float: left;
-	text-align: center;
-	margin-top: 2vw;
-}
-.mainMenu img {
-	width: 7vw;
-	height:7vw;
-	margin: 0;
-}
-.mainMenu p {
-	font-size: 3vw;
-	font-weight: bolder;
-	color: gray;
-	margin-top:1vw;
-}
 #presonMessageMenu p{
 	color:rgb(48, 150, 7);
 }
@@ -199,25 +174,8 @@ textarea::placeholder {
 #callback {
 	position: absolute;
 	left: 2vw;
-	top: 2vw;
+	top: 1vw;
 	width: 10vw;
 	height:8vw;
 	display: none;
-}
-#alert{
-	position:absolute;
-	bottom:20vw; 
-	left:50vw;
-	max-width:60vw;
-	transform: translate(-50%,-50%);
-	-o-transform: translate(-50%,-50%);
-	-ms-transform: translate(-50%,-50%);
-	-webkit-transform: translate(-50%,-50%);
-	font-size:3vw; 
-	color:white; 
-	background-color:rgba(0,0,0,0.7);
-	border-radius:2vw;
-	padding-left:3vw;
-	padding-right:3vw;
-	z-index:999;
 }

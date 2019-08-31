@@ -5,9 +5,7 @@ body,html{
 }
 body {
 	background-color: white;
-	overflow:hidden;
-	margin:0;
-	padding:0;
+	position:absolute;
 }
 #spareBox {
 	width:100vw;
@@ -57,6 +55,12 @@ body {
 	font-size: 3vw;
 	text-align:center;
 	border-radius:3vw; 
+}
+#day{
+	width:30vw;
+}
+#weekDayBox label{
+	font-size:3vw;
 }
 .wx-input:hover{
 	border: 1px solid rgb(48, 150, 7);
@@ -145,6 +149,7 @@ display:none;
 	margin: 0 auto;
 	overflow:auto;
 	float:left;
+	display:none;
 }
 #SelfWeekSelectCheckbox{
 	width:150vw;
@@ -168,7 +173,7 @@ input[type="checkbox"]{
 /*主要内容部分*/
 #container {
 	width: 95vw;
-	height: 70vw;
+	height: 50vw;
 	margin: 0 auto;
 	overflow: auto;
 	border-top: 3px solid rgb(48, 150, 7);
@@ -204,50 +209,6 @@ td {
 	border: 1px solid black;
 	padding: 0;
 }
-/*底部菜单的样式*/
-#menu {
-	position: fixed;
-	bottom: 0;
-	width: 100vw;
-	height: 15vw;
-	border-top: 1px solid black;
-	background-color:white;
-}
-.mainMenu {
-	width: 25vw;
-	height: 15vw;
-	float: left;
-	text-align: center;
-	margin-top: 2vw;
-}
-.mainMenu img {
-	width: 7vw;
-	height:7vw;
-	margin: 0;
-}
-.mainMenu p {
-	font-size: 3vw;
-	font-weight: bolder;
-	color: gray;
-	margin-top:1vw;
-}
 #spareMenu p{
 	color:rgb(48, 150, 7);
-}
-#alert{
-	position:absolute;
-	bottom:20vw; 
-	left:50vw;
-	max-width:60vw;
-	transform: translate(-50%,-50%);
-	-o-transform: translate(-50%,-50%);
-	-ms-transform: translate(-50%,-50%);
-	-webkit-transform: translate(-50%,-50%);
-	font-size:3vw; 
-	color:white; 
-	background-color:rgba(0,0,0,0.7);
-	border-radius:2vw;
-	padding-left:3vw;
-	padding-right:3vw;
-	z-index:999;
 }
