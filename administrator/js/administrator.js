@@ -1,18 +1,4 @@
-var winHeight = $(window).height();  //当手机软键盘弹出时将底部菜单,藏在软键盘后面,软键盘关闭不变
-var reserveStatics;
-$(window).resize(function () {
-  var thisHeight = $(this).height();
-  if ( winHeight - thisHeight > 140 ) {
-      //键盘弹出
-      $('#menu').css('position','static');
-      $("body").css("overflow-y","scroll");
-  } else {
-      //键盘收起
-      $('#menu').css({'position':'fixed','bottom':'0'});
-      $("body").css("overflow-y","hidden");
-      
-  }
-})
+
 function getUrlParam(names) {//获取URL中的参数
     var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     var r = window.location.search.substr(1).match(reg); //匹配目标参数
@@ -44,8 +30,8 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
                                             +"<th>生日</th>"
                                             +'</tr>');
         for(var i in data){
-          $("#administratorTable").append('<tr> <td><input type="checkbox" class="selectPart" value=true/><p>选中</p></td> <td>'
-                                          +'<td class="operate"><a class="operateChange">修改</a> <a class="operateDelete">删除</a></td>'
+          $("#administratorTable").append('<tr> <td><input type="checkbox" class="selectPart" value=true/><p>选中</p></td>'
+                                          +'<td class="operate"><a class="operateChange">修改</a> <a class="operateDelete">删除</a></td> <td>'
                                           +data[i].name+'</td> <td>'
                                           +data[i].department+'</td> <td>'
                                           +data[i].position+'</td> <td>'
@@ -56,16 +42,16 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
                                           +data[i].number+'</td> <td>'
                                           +data[i].birthday+'</td>'+'</tr>');
         }
-        $(".operateChange").on('click',function(){//如果点击姓名则跳转到个人页面
+        $(".operateChange").on('click',function(){//如果点击修改则跳转到个人页面
   
-          console.log($(this).parent().parent().children().eq(8).text());
+          console.log($(this).parent().parent().children().eq(9).text());
           $("#amendBox").toggle();
           $("#blackBox").toggle();
           $("#amendBox").animate({"top":"65%"},500); 
           $.ajax({//发送请求获取个人信息
             url:"http://system.chiukiki.cn/api/queryAdmin",
             data:{
-              queryNumber:$(this).parent().parent().children().eq(8).text()
+              queryNumber:$(this).parent().parent().children().eq(9).text()
             },
             success:function(data){
               $("body").append("<div id='alert'>"+"获取信息成功"+"</div>");
@@ -85,7 +71,7 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
         $(".operateDelete").on('click',function() {//操作中的删除按钮
           if(confirm("你确定要删除这些用户的信息?")){
             var people=new Array();
-            people.push($(this).parent().parent().children().eq(8).text());
+            people.push($(this).parent().parent().children().eq(9).text());
             $(this).parent().parent().remove();
             $.ajax({
               url:"http://system.chiukiki.cn/api/delete",
@@ -112,6 +98,9 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
           if($("#allSelect").prop("checked")){
             $(".selectPart").prop("checked",true);
           }  
+          else{
+            $(".selectPart").prop("checked",false);
+          }
         })
       },
       error:function(data){
@@ -130,7 +119,7 @@ $(function(){//点击保存时保存数据
                 "/^1(3|4|5|7|8|9)[0-9]{9}$/",
                 "/^[1-9][0-9]{4,9}$/",
                 "/^([a-z0-9_\.-]+)@([0-9a-z\.-]+)\.([a-z]{2,6})$/",
-                "/^[\u2E80-\u9FFF]+$/",
+                "/^[\u2E80-\u9FFF]+学院$/",
                 "/^[0-9]{12}$/",
                 "/^(?:1[0-2]|[1-9]).(?:[1-9]|([1-2][0-9])?|3[0-1])$/"
 		);
@@ -141,14 +130,14 @@ $(function(){//点击保存时保存数据
                      "电话必须为12位电话号码",
                      "QQ必须正确",
                      "邮箱必须符合要求",
-                     "学院必须为两位以上的汉字",
+                     "学院必须为两位以上的汉字且以学院结尾",
                      "学号必须为12位的数字",
 										 "生日必须是12.18这种格式",
       )
 			for(var i=0;i<tests.length;i++){//依次检测数据是否正确
-				var j=$(".data").eq(i).attr("placeholder");console.log("j="+j);
-				var text=j[j.length-2]+j[j.length-1];console.log(text);
-				var reg=eval(tests[i]);console.log(i);
+				var j=$(".data").eq(i).attr("placeholder");   console.log("j="+j);
+				var text=j[j.length-2]+j[j.length-1];         console.log(text);
+				var reg=eval(tests[i]);                       console.log(i);
 				if(($(".data").eq(i).val()==null||$(".data").eq(i).val()=="")){
           $("body").append("<div id='alert'>"+text+"不为空"+"</div>");
           window.setTimeout(function(){$("#alert").remove();},2000);
@@ -157,7 +146,7 @@ $(function(){//点击保存时保存数据
 					break;
 				}
 				else{
-					  console.log(reg);
+					console.log(reg);
 					  console.log(reg.test($(".data").eq(i).val()));
 					  if( reg.test($(".data").eq(i).val()) ){
               detections = true;
@@ -217,8 +206,8 @@ $(function(){//删除用户信息
     if(confirm("你确定要删除这些用户的信息?")){
       var people=new Array();
       $(".selectPart:checked").each(function(){
-          if(!($(this).parent().parent().children().eq(8).text()==""||$(this).parent().parent().children().eq(8).text()==null)){
-            people.push($(this).parent().parent().children().eq(8).text());  
+          if(!($(this).parent().parent().children().eq(9).text()==""||$(this).parent().parent().children().eq(8).text()==null)){
+            people.push($(this).parent().parent().children().eq(9).text());  
           }
           $(this).parent().parent().remove();
       });
