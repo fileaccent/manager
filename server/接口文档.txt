@@ -1,0 +1,298 @@
+●登录接口
+
+接口：
+127.0.0.1/frame/system/public/api/operatorLogin
+
+需要前端传来的参数：
+number，password
+
+成功：
+HTTP/1.1 200 OK
+管理员：{"message" : "登陆成功","identity" : "administrator"}
+非管理员：{"message" : "登陆成功","identity" : "people"}
+
+失败：
+HTTP/1.1 401 Unauthorized
+{"message" : "用户名或密码错误"}
+
+------------------------------------------------------------------------------------------
+
+●注册接口
+
+接口：
+127.0.0.1/frame/system/public/api/insert
+
+需要前端传来的参数：
+name，number，tel，department，password，confirmPassword
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "注册成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+number已存在：			{"message" : "该学号已被注册"}
+password不等于confirmPassword：	{"message" : "密码不一致"}
+其他：				{"message" : "注册失败"}
+
+------------------------------------------------------------------------------------------
+
+●忘记密码接口
+
+接口：
+127.0.0.1/frame/system/public/api/forgetPassword
+
+需要前端传来的参数：
+number，tel，setPassword
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "找回密码成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+{"message" : "找回密码失败"}
+
+------------------------------------------------------------------------------------------
+
+●注销接口
+
+无需参数
+
+接口：
+127.0.0.1/frame/system/public/api/operatorLogout
+
+成功：
+{"message" : "注销成功"}
+
+------------------------------------------------------------------------------------------
+
+●首页显示信息接口——百步梯通讯录
+
+接口：
+127.0.0.1/frame/system/public/api/queryInitial
+
+无需参数
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"b","department":"\u6280\u672f\u90e8","position":"\u90e8\u957f"},{"name":"a","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"},{"name":"d","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"},
+{"name":"\u6d4b\u8bd5","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"},{"name":"e","department":"\u89c6\u9891\u90e8","position":"\u526f\u90e8\u957f"},{"name":"c","department":"\u89c6\u9891\u90e8","position":"\u5e72\u4e8b"},{"name":"f","department":"\u89c6\u9891\u90e8","position":"\u5e72\u4e8b"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "无法显示"}
+
+------------------------------------------------------------------------------------------
+
+●搜索框查询接口1——百步梯通讯录
+
+接口：
+127.0.0.1/frame/system/public/api/queryInfo
+
+前端传已一个参数：query（可以是姓名，部门，职位）
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"a","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"},{"name":"b","department":"\u6280\u672f\u90e8","position":"\u90e8\u957f"},{"name":"d","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"},
+{"name":"\u6d4b\u8bd5","department":"\u6280\u672f\u90e8","position":"\u5e72\u4e8b"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "查不到"}
+
+------------------------------------------------------------------------------------------
+
+●搜索框查询接口2——百步梯通讯录（修改状态）
+
+接口：
+127.0.0.1/frame/system/public/api/queryInfoAdmin
+
+前端传已一个参数：query（可以是姓名，部门）
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"a","department":"\u6280\u672f\u90e8","birthday":"10.17","tel":"15800000000","QQ":"840084384","email":"123456@qq.com","number":"201830250000","school":"\u7535\u4fe1","position":"\u5e72\u4e8b"},
+{"name":"b","department":"\u6280\u672f\u90e8","birthday":"9.21","tel":"13600000000","QQ":"25629891","email":"666666@qq.com","number":"201862880000","school":"\u8ba1\u7b97\u673a","position":"\u90e8\u957f"},
+{"name":"d","department":"\u6280\u672f\u90e8","birthday":"9.4","tel":"13200000000","QQ":"9588892220","email":"aaaaaaa@qq.com","number":"201830660000","school":"\u8ba1\u7b97\u673a","position":"\u5e72\u4e8b"},
+{"name":"\u6d4b\u8bd5","department":"\u6280\u672f\u90e8","birthday":"10.17","tel":"15800000000","QQ":"1169849916","email":"123456@qq.com","number":"201830255555","school":"\u7535\u5b50\u4e0e\u4fe1\u606f\u5b66\u9662","position":"\u5e72\u4e8b"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "查不到"}
+
+------------------------------------------------------------------------------------------
+
+●管理员获取他人信息——百步梯通讯录（修改状态）
+
+接口：
+127.0.0.1/frame/system/public/api/queryAdmin
+
+前端传已一个参数：queryNumber
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"\u6d4b\u8bd5",
+"department":"\u6280\u672f\u90e8",
+"birthday":"10.17",
+"tel":"15800000000",
+"QQ":"1169849916",
+"email":"123456@qq.com",
+"number":"201830255555",
+"school":"\u7535\u5b50\u4e0e\u4fe1\u606f\u5b66\u9662",
+"position":"\u5e72\u4e8b"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "查不到"}
+
+------------------------------------------------------------------------------------------
+
+●删除（可批量）人员接口——百步梯通讯录（修改状态）
+
+接口：
+127.0.0.1/frame/system/public/api/delete
+
+需要的参数：
+number[]	（数组）
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "删除成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+非管理员：{"message" : "无权限"}
+其他：{"message" : "删除失败"}
+
+------------------------------------------------------------------------------------------
+
+●管理员修改他人信息接口——百步梯通讯录（修改状态）
+
+接口：
+127.0.0.1/frame/system/public/api/updatePeople
+
+需要前端传来的参数：
+name，birthday，QQ，number，tel，email，school，department，position
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "修改成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+非管理员：{"message" : "无权限"}
+其他：{"message" : "修改失败"}
+
+------------------------------------------------------------------------------------------
+
+●通讯录点击某人名字查询其信息接口——详细信息
+
+接口：
+127.0.0.1/frame/system/public/api/query
+
+需要前端传递的参数：
+queryName
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"a",
+"school":"\u7535\u4fe1",
+"department":"\u6280\u672\u90e8",
+"position":"\u5e72\u4e8b",
+"birthday":"10.17",
+"tel":"15800000000",
+"QQ":"840084384",
+"email":"123456@qq.com",
+"number":"201830250000",
+"message":"\u81ea\u6211\u4ecb\u7ecd\uff0c\uff0c"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "查不到"}
+
+------------------------------------------------------------------------------------------
+
+●获取自己信息接口——个人信息
+
+接口：
+127.0.0.1/frame/system/public/api/queryNumber
+
+需要前端传递的参数：
+queryNumber
+
+成功：
+HTTP/1.1 200 OK
+[{"name":"a",
+"school":"\u7535\u4fe1",
+"department":"\u6280\u672\u90e8",
+"position":"\u5e72\u4e8b",
+"birthday":"10.17",
+"tel":"15800000000",
+"QQ":"840084384",
+"email":"123456@qq.com",
+"number":"201830250000",
+"message":"\u81ea\u6211\u4ecb\u7ecd\uff0c\uff0c"}]
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录或queryNumber不等于已登录账号：{"message" : "无权限"}
+其他：{"message" : "查不到"}
+
+------------------------------------------------------------------------------------------
+
+●自己修改自己信息接口——个人信息
+
+接口：
+127.0.0.1/frame/system/public/api/updatePeople
+
+需要前端传来的参数：
+name，birthday，QQ，number，tel，email，school，department，position，message
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "修改成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录或number不等于已登录账号：{"message" : "无权限"}
+其他：{"message" : "修改失败"}
+
+------------------------------------------------------------------------------------------
+
+●没课表查询接口
+接口：
+127.0.0.1/frame/system/public/api/free
+
+需要的参数：weekNum,day,class,department（可选）
+
+成功：
+HTTP/1.1 200 OK
+{name:["a","b"]}
+
+失败：
+HTTP/1.1 403 Forbidden
+{"message" : "查询失败"}
+或{"message" : "无权限"}
+
+------------------------------------------------------------------------------------------
+
+●没课表录入接口
+接口：
+127.0.0.1/frame/system/public/api/insertFree
+
+需要的参数：day[]，class[]	（数组）
+
+成功：
+HTTP/1.1 200 OK
+{"message" : "录入成功"}
+
+失败：
+HTTP/1.1 403 Forbidden
+未登录：{"message" : "无权限"}
+其他：{"message" : "录入失败"}
