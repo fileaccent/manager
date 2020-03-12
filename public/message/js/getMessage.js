@@ -29,7 +29,7 @@ $(function(){//加载信息
 		$(function(){/*载入时获得人员的数据*/
 			console.log(decodeURI(decodeURI(getUrlParam("queryName"))));
 			$.ajax({
-				url:"http://127.0.0.1:3000/query",
+				url:"http://www.fileaccent.cn:8080/query",
 				data:{
           queryName:decodeURI(decodeURI(getUrlParam("queryName")))
 				},
@@ -56,7 +56,7 @@ $(function(){//加载信息
 		$(function(){/*载入时获得人员的数据*/
 			console.log(getUrlParam("queryNumber"))
 			$.ajax({
-				url:"http://127.0.0.1:3000/queryNumber",
+				url:"http://www.fileaccent.cn:8080/queryNumber",
 				data:{
           queryNumber:getUrlParam("queryNumber")
 				},
@@ -172,7 +172,7 @@ $(function(){//点击修改,完成按钮根据值的不同来触发事件
 			  $("#spareEnter").show();
 				$("#menu").show();/*修改细节*/
 				$.ajax({
-					url:"http://127.0.0.1:3000/updatePeople",
+					url:"http://www.fileaccent.cn:8080/updatePeople",
 					data:{
 						name:$("#userName").val(),
 						school:$("#userAcademy").val(),

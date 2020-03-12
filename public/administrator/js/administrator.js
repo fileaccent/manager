@@ -8,7 +8,7 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
 	$("#addressBookSearchImg").click(function(){
     reserveStatics=$("#addressBook").val();
     $.ajax({
-      url:"http://127.0.0.1:3000/queryInfoAdmin",
+      url:"http://www.fileaccent.cn:8080/queryInfoAdmin",
       data:{
         query:$("#addressBook").val()
       },
@@ -51,7 +51,7 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
           $("#blackBox").toggle();
           $("#amendBox").animate({"top":"65%"},500); 
           $.ajax({//发送请求获取个人信息
-            url:"http://127.0.0.1:3000/queryAdmin",
+            url:"http://www.fileaccent.cn:8080/queryAdmin",
             data:{
               queryNumber:$(this).parent().parent().children().eq(9).text()
             },
@@ -80,7 +80,7 @@ $(function(){/*载入时获得人员的数据并添加修改,删除的逻辑*/
             people.push($(this).parent().parent().children().eq(9).text());
             $(this).parent().parent().remove();
             $.ajax({
-              url:"http://127.0.0.1:3000/delete",
+              url:"http://www.fileaccent.cn:8080/delete",
               data:{
                 number: people
               },
@@ -171,7 +171,7 @@ $(function(){//点击保存时保存数据
       }
       if(detections == true){
         $.ajax({  
-          url:"http://127.0.0.1:3000/updatePeople",
+          url:"http://www.fileaccent.cn:8080/updatePeople",
           data:{
           name:$("#userName").val(),
           birthday:$("#userBirthday").val(),
@@ -219,7 +219,7 @@ $(function(){//删除用户信息
           $(this).parent().parent().remove();
       });
       $.ajax({
-        url:"http://127.0.0.1:3000/delete",
+        url:"http://www.fileaccent.cn:8080/delete",
         data:{
         number:people
         },

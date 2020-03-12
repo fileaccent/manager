@@ -100,7 +100,7 @@ $(function(){//先检验数据是否符合格式,符合再发送请求
     }
     if(detections==true&&passwordSame==true&&(!($("#password").val()==null||$("#password").val()==""))){
       $.ajax({
-        url:"http://127.0.0.1:3000/insert",
+        url:"http://www.fileaccent.cn:8080/insert",
         data:{
           name:$("#name").val(),
           number:$("#studentNum").val(),

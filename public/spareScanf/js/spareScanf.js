@@ -99,7 +99,7 @@ $(function(){//点击按钮保存
       console.log("arrs="+arrs);
       console.log("data="+data);
       $.ajax({
-        url:"http://127.0.0.1:3000/insertFree",
+        url:"http://www.fileaccent.cn:8080/insertFree",
         data:{
           day:arrs,
           week_num:data

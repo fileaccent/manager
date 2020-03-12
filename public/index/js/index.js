@@ -28,7 +28,7 @@ function isPasswordCorrect(){/*检验密码的有效性*/
 $(function(){//用于登录时跳转,前端向后端请求得到"登录成功"时,跳转页面
   $("#registerSubmit").on("click",function(){
     $.ajax({
-      url:"http://127.0.0.1:3000/operatorLogin",
+      url:"http://www.fileaccent.cn:8080/operatorLogin",
       data:{
         number: $('#registerName')[0].value,
         password: $('#registerPassword')[0].value
@@ -103,7 +103,7 @@ $(function(){//点击保存时保存数据
     }
     if(detections==true){
       $.ajax({
-        url:"http://127.0.0.1:3000/forgetPassword",
+        url:"http://www.fileaccent.cn:8080/forgetPassword",
         data:{
           number:$("#userStudentNum").val(),
 				  tel:$("#userTelephone").val(),

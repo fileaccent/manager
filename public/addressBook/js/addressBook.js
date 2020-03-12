@@ -14,7 +14,7 @@ function getUrlParam(names) {//从URL中获取参数
 }
 $(function(){//载入时输出所有人员
   $.ajax({
-    url:"http://127.0.0.1:3000/queryInitial",
+    url:"http://www.fileaccent.cn:8080/queryInitial",
     data:{
 
     },
@@ -48,7 +48,7 @@ $(function(){/*点击时获得人员的数据*/
   $("#addressBookSearchImg").click(function(){
     if($("#addressBook").val()==null||$("#addressBook").val()==""){
       $.ajax({
-        url:"http://127.0.0.1:3000/queryInitial",
+        url:"http://www.fileaccent.cn:8080/queryInitial",
         data:{
 
         },
@@ -79,7 +79,7 @@ $(function(){/*点击时获得人员的数据*/
     }
     else{
       $.ajax({
-        url:"http://127.0.0.1:3000/queryInfo",
+        url:"http://www.fileaccent.cn:8080/queryInfo",
         data:{
           query:$("#addressBook").val()
         },

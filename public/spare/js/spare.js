@@ -31,7 +31,7 @@ $(function(){//点击搜索按钮开始搜索
     console.log(/^[\u2E80-\u9FFF]+$/.test($(".department input").attr("data-value")));
     if(/^(?:1[0-8]|[0-9])$/.test($("#day").val())&&/^[\u2E80-\u9FFF]+$/.test($(".department input").attr("data-value"))){
       $.ajax({
-        url:"http://127.0.0.1:3000/free",
+        url:"http://www.fileaccent.cn:8080/free",
         data:{
           weekNum:$("#day").val(),
           day:$(".weekDay input").attr("data-value"),
